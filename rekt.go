@@ -39,7 +39,7 @@ func NewREKTManager(workers int) *REKTManager {
 				TLSHandshakeTimeout: 10 * time.Second,
 			}},
 		tokens:   make(chan struct{}, workers),
-		respchan: make(chan Response, 100),
+		respchan: make(chan Response),
 	}
 
 	rm.respwg.Add(1)
